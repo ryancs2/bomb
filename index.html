@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pode importar o CSS do Font Awesome assim: 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    -->
     <title>InovaCat</title>
     <style>
+        /* Importa o CSS do font Awesome */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
         * {
             box-sizing: border-box;
             outline: none;
@@ -34,13 +40,57 @@
 
         /* header filho direto de #wrap */
         #wrap>header {
-            background-color: grey;
+            background-color: #222;
             color: white;
-            padding: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 4rem;
+            color: rgb(3, 110, 75);
+            margin: .5rem;
+        }
+
+        .title {
+            margin: 0;
+            font-family: monospace;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .title strong {
+            color: rgb(125, 219, 215);
+        }
+
+        .title small {
+            display: block;
+            font-size: .75rem;
+            letter-spacing: .05rem;
+        }
+
+        #wrap>header a {
+            text-decoration: none;
+            color: white;
         }
 
         #wrap>nav {
             background-color: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #wrap>nav a {
+            text-decoration: none;
+            color: #222;
+            padding: 1rem;
+            transition: .2s;
+        }
+
+        #wrap>nav a:hover {
+            background-color: #222;
+            color: orange;
         }
 
         #wrap>main {
@@ -67,18 +117,18 @@
             background-color: red;
         }
 
-        /* MEDIA QUERIES */
+
+        /* Media Queries */
 
         @media screen and (min-width: 768px) {
             #wrap>main {
                 flex-direction: row;
             }
 
-
             #wrap>main>aside {
                 /* flex: 0 0 220px; */
-                flex-basis: 220px;
                 flex-shrink: 0;
+                flex-basis: 220px;
             }
         }
     </style>
@@ -88,13 +138,22 @@
 
     <div id="wrap">
 
-        <header>Cabeçalho</header>
+        <header>
+            <a href="#Início"><i class="fa-solid fa-bomb"></i></a>
+            <a href="#Início">
+                <h1 class="title">
+                    <span>Double<strong>CS</strong></span>
+                    <small>Categorizando tudo!</small>
+                </h1>
+            </a>
+        </header>
 
+        <!-- MENU PRINCIPAL E ICONS -->
         <nav>
-            <a href="#Início"><span>Início</span></a>
-            <a href="#Lista"><span>Lista</span></a>
-            <a href="#Contato"><span>Contato</span></a>
-            <a href="#Sobre"><span>Sobre</span></a>
+            <a href="#Início"><i class="fa-solid fa-house"></i><span>Início</span></a>
+            <a href="#Lista"><i class="fa-solid fa-clipboard-list"></i><span>Lista</span></a>
+            <a href="#Contato"><i class="fa-regular fa-comments"></i><span>Contato</span></a>
+            <a href="#Sobre"><i class="fa-solid fa-circle-info"></i></i><span>Sobre</span></a>
         </nav>
 
         <main>
@@ -102,7 +161,6 @@
             <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
                 molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
                 aliquam architecto laborum!
-
 
             </article>
 
@@ -116,7 +174,6 @@
         </main>
 
         <footer>Rodapé</footer>
-
 
     </div>
 
