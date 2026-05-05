@@ -38,25 +38,7 @@
             gap: .5rem;
         }
 
-        #wrap>nav {
-            background-color: orange;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        #wrap>nav a {
-            text-decoration: none;
-            color: #222;
-            padding: 1rem;
-            transition: .2s;
-        }
-
-        #wrap>nav a:hover {
-            background-color: #222;
-            color: orange;
-        }
-
+       
         #wrap>main {
             background-color: orange;
             color: white;
@@ -190,6 +172,35 @@
             }
             
         }
+
+        /* Menu Principal */
+         #wrap>nav {
+            background-color: orange;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+
+        #wrap>nav a {
+            text-decoration: none;
+            color: #222;
+            padding: 1rem;
+            transition: .2s;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #wrap>nav a:hover {
+            background-color: #222;
+            color: orange;
+        }
+
+        #wrap>nav a:first-child {
+            margin-right: auto;
+        }
+
+
     </style>
 </head>
 
@@ -220,10 +231,10 @@
         </header>
 
         <nav>
-            <a href="#Início"><i class="fa-solid fa-house"></i><span>Início</span></a>
-            <a href="#Lista"><i class="fa-solid fa-clipboard-list"></i><span>Lista</span></a>
-            <a href="#Contato"><i class="fa-solid fa-comments"></i><span>Contato</span></a>
-            <a href="#Sobre"><i class="fa-solid fa-circle-info"></i><span>Sobre</span></a>
+            <a href="#Início"><i class="fa-solid fa-house fa-fw"></i><span>Início</span></a>
+            <a href="#Lista"><i class="fa-solid fa-clipboard-list fa-fw"></i><span>Lista</span></a>
+            <a href="#Contato"><i class="fa-solid fa-comments fa-fw"></i><span>Contato</span></a>
+            <a href="#Sobre"><i class="fa-solid fa-circle-info fa-fw"></i><span>Sobre</span></a>
         </nav>
 
         <main>
