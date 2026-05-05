@@ -38,7 +38,8 @@
             gap: .5rem;
         }
 
-       
+
+
         #wrap>main {
             background-color: orange;
             color: white;
@@ -64,19 +65,7 @@
         }
 
 
-        /* Media Queries - Telas maiores 768px */
 
-        @media screen and (min-width: 768px) {
-            #wrap>main {
-                flex-direction: row;
-            }
-
-            #wrap>main>aside {
-                /* flex: 0 0 220px; */
-                flex-shrink: 0;
-                flex-basis: 220px;
-            }
-        }
 
         #wrap>header {
             background-color: #333;
@@ -96,21 +85,24 @@
             padding: 1rem;
         }
 
-        .header-search input, .header-search button {
+        .header-search input,
+        .header-search button {
             /* Herda a fonte e o tamanho da fonte do body */
             font-family: inherit;
             font-size: inherit;
             border: none;
             padding: .5rem 1rem;
         }
-        .header-search input{
+
+        .header-search input {
             flex-grow: 1;
             border-radius: .4rem 0 0 .4rem;
         }
+
         .header-search button {
             border-radius: 0 .4rem .4rem 0;
             padding: .5rem;
-            background-color:(231, 231, 231)
+            background-color: rgb(231, 231, 231);
         }
 
         #wrap>header a {
@@ -119,7 +111,7 @@
 
         #wrap>header .logo {
             font-size: 4rem;
-            color: rgb(55, 128, 156);
+            color: orange;
         }
 
         #wrap>header .title {
@@ -137,11 +129,11 @@
 
         #wrap>header .title i {
             font-size: small;
-            color: rgb(173, 173, 173);
+            color: orange;
         }
 
         #wrap>header .title span {
-            color: rgb(45, 179, 184);
+            color: orange;
         }
 
         #wrap>header .title small {
@@ -149,7 +141,42 @@
             letter-spacing: .25rem;
         }
 
-         /* Media Queries - Telas maiores 768px */
+        /* Menu principal */
+
+        #wrap>nav {
+            background-color: orange;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #wrap>nav a {
+            text-decoration: none;
+            color: #222;
+            padding: 1rem;
+            transition: .2s;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: .45rem;
+        }
+
+
+        #wrap>nav a i {
+            font-size: 2rem;
+        }
+
+        #wrap>nav a:hover {
+            background-color: #222;
+            color: orange;
+        }
+
+        #wrap>nav a:last-child {
+            margin-left: auto;
+        }
+
+
+        /* Media Queries - Telas maiores 768px */
 
         @media screen and (min-width: 768px) {
             #wrap>main {
@@ -166,41 +193,21 @@
         /* Media Queries - Telas maiores 575px */
         @media screen and (min-width: 575px) {
 
-             #wrap>header {
+            #wrap>header {
                 flex-direction: row;
                 justify-content: space-between;
             }
-            
+
+            #wrap>nav a {
+                flex-direction: row;
+                gap: .25rem;
+            }
+
+            #wrap>nav a i {
+                font-size: 1.25rem;
+            }
+
         }
-
-        /* Menu Principal */
-         #wrap>nav {
-            background-color: orange;
-            display: flex;
-            align-items: center;
-            justify-content: end;
-        }
-
-        #wrap>nav a {
-            text-decoration: none;
-            color: #222;
-            padding: 1rem;
-            transition: .2s;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        #wrap>nav a:hover {
-            background-color: #222;
-            color: orange;
-        }
-
-        #wrap>nav a:first-child {
-            margin-right: auto;
-        }
-
-
     </style>
 </head>
 
@@ -211,11 +218,11 @@
         <header>
             <!--  Logotipo e nome do site -->
             <div class="header-logo">
-                <a href="#Início" class="logo"><i class="fa-solid fa-clover"></i></a>
+                <a href="#Início" class="logo"><i class="fa-solid fa-cat fa-fw"></i></a>
                 <a href="#Início" class="title">
                     <h1>
                         <i class="fa-solid fa-less-than"></i>
-                        <span>D</span>ouble<span>CS</span>
+                        <span>S</span>uper<span>C</span>at
                         <i class="fa-solid fa-greater-than"></i>
                     </h1>
                     <small>Categorize tudo!</small>
@@ -235,6 +242,7 @@
             <a href="#Lista"><i class="fa-solid fa-clipboard-list fa-fw"></i><span>Lista</span></a>
             <a href="#Contato"><i class="fa-solid fa-comments fa-fw"></i><span>Contato</span></a>
             <a href="#Sobre"><i class="fa-solid fa-circle-info fa-fw"></i><span>Sobre</span></a>
+            <!-- <a href="#Login"><i class="fa-solid fa-right-to-bracket fa-fw"></i><span>Login</span></a> -->
         </nav>
 
         <main>
@@ -254,7 +262,11 @@
 
         </main>
 
-        <footer>Rodapé</footer>
+        <footer>
+            <a href="#Início"><i class="fa-solid fa-house fa-fw"></i></a>
+            <div>&copy; 2026 Ryan Cristhian</div>
+            <a href="#top"><i class="fa-solid fa-circle-up fa-fw"></i></a>
+        </footer>
 
     </div>
 
