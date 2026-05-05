@@ -7,7 +7,7 @@
     <!-- Pode importar o CSS do Font Awesome assim: 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     -->
-    <title>Bomb</title>
+    <title>InovaCat</title>
     <style>
         /* Importa o CSS do font Awesome */
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
@@ -38,44 +38,8 @@
             gap: .5rem;
         }
 
-        /* header filho direto de #wrap */
-        #wrap>header {
-            background-color: #222;
-            color: white;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 4rem;
-            color: rgb(82, 143, 140);
-            margin: .5rem;
-        }
-
-        .title {
-            margin: 0;
-            font-family: monospace;
-            font-weight: normal;
-            text-align: center;
-        }
-
-        .title strong {
-            color: rgb(125, 219, 215);
-        }
-
-        .title small {
-            display: block;
-            font-size: .75rem;
-            letter-spacing: .05rem;
-        }
-
-        #wrap>header a {
-            text-decoration: none;
-            color: white;
-        }
-
         #wrap>nav {
-            background-color: rgb(33, 151, 39);
+            background-color: orange;
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -103,13 +67,13 @@
         }
 
         #wrap>main>article {
-            background-color: rgb(69, 117, 109);
+            background-color: green;
             padding: 1rem;
             flex-grow: 1;
         }
 
         #wrap>main>aside {
-            background-color: rgb(18, 131, 197);
+            background-color: blue;
             padding: 1rem;
         }
 
@@ -118,7 +82,7 @@
         }
 
 
-        /* Media Queries - Telas maiores de 768px */
+        /* Media Queries - Telas maiores 768px */
 
         @media screen and (min-width: 768px) {
             #wrap>main {
@@ -131,6 +95,101 @@
                 flex-basis: 220px;
             }
         }
+
+        #wrap>header {
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .header-search {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .header-search input, .header-search button {
+            /* Herda a fonte e o tamanho da fonte do body */
+            font-family: inherit;
+            font-size: inherit;
+            border: none;
+            padding: .5rem 1rem;
+        }
+        .header-search input{
+            flex-grow: 1;
+            border-radius: .4rem 0 0 .4rem;
+        }
+        .header-search button {
+            border-radius: 0 .4rem .4rem 0;
+            padding: .5rem;
+            background-color:(231, 231, 231)
+        }
+
+        #wrap>header a {
+            text-decoration: none;
+        }
+
+        #wrap>header .logo {
+            font-size: 4rem;
+            color: rgb(55, 128, 156);
+        }
+
+        #wrap>header .title {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrap>header .title h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #wrap>header .title i {
+            font-size: small;
+            color: rgb(173, 173, 173);
+        }
+
+        #wrap>header .title span {
+            color: rgb(45, 179, 184);
+        }
+
+        #wrap>header .title small {
+            font-family: monospace;
+            letter-spacing: .25rem;
+        }
+
+         /* Media Queries - Telas maiores 768px */
+
+        @media screen and (min-width: 768px) {
+            #wrap>main {
+                flex-direction: row;
+            }
+
+            #wrap>main>aside {
+                /* flex: 0 0 220px; */
+                flex-shrink: 0;
+                flex-basis: 220px;
+            }
+        }
+
+        /* Media Queries - Telas maiores 575px */
+        @media screen and (min-width: 575px) {
+
+             #wrap>header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+        }
     </style>
 </head>
 
@@ -139,20 +198,31 @@
     <div id="wrap">
 
         <header>
-            <a href="#Início"><i class="fa-solid fa-clover logo"></i></a>
-            <a href="#Início">
-                <h1 class="title">
-                    <span>Double<strong>CS</strong></span>
-                    <small>Categorizando tudo!</small>
-                </h1>
-            </a>
+            <!--  Logotipo e nome do site -->
+            <div class="header-logo">
+                <a href="#Início" class="logo"><i class="fa-solid fa-clover"></i></a>
+                <a href="#Início" class="title">
+                    <h1>
+                        <i class="fa-solid fa-less-than"></i>
+                        <span>D</span>ouble<span>CS</span>
+                        <i class="fa-solid fa-greater-than"></i>
+                    </h1>
+                    <small>Categorize tudo!</small>
+                </a>
+            </div>
+
+            <!-- Formulário de pesquisa -->
+            <form action="" method="get" class="header-search">
+                <input type="search" name="q" placeholder="Pesquisar por...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+
         </header>
 
-        <!-- MENU PRINCIPAL E ICONS -->
         <nav>
             <a href="#Início"><i class="fa-solid fa-house"></i><span>Início</span></a>
             <a href="#Lista"><i class="fa-solid fa-clipboard-list"></i><span>Lista</span></a>
-            <a href="#Contato"><i class="fa-regular fa-comments"></i><span>Contato</span></a>
+            <a href="#Contato"><i class="fa-solid fa-comments"></i><span>Contato</span></a>
             <a href="#Sobre"><i class="fa-solid fa-circle-info"></i><span>Sobre</span></a>
         </nav>
 
